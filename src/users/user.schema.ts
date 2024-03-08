@@ -13,8 +13,11 @@ export class User {
   @Prop({ required: true })
   email: string;
 
-  @Prop()
-  role: string;
+  @Prop({ required: true })
+  password: string;
+
+  @Prop([String])
+  roles: string[];
 
   @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'Skill' }])
   skills: Skill[];

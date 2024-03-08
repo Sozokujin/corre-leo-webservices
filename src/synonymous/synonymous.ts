@@ -7,5 +7,4 @@ export const skillSynonyms: { [key: string]: string } = {
   ts: "TypeScript",
   scrum: "Scrum",
   JS: "Javascript"
-  // Ajoutez d'autres synonymes selon vos besoins
 };

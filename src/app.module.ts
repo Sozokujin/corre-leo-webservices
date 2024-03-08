@@ -6,6 +6,7 @@ import { MongodbModule } from './mongodb/mongodb.module';
 import { UsersModule } from './users/users.module';
 import { ProjectsModule } from './projects/projects.module';
 import { SkillsModule } from './skills/skills.module';
+import { AuthModule } from './auths/auths.module';
 
 @Module({
   imports: [MongodbModule,
@@ -14,7 +15,8 @@ import { SkillsModule } from './skills/skills.module';
     }),
     UsersModule,
     ProjectsModule,
-    SkillsModule,],
+    SkillsModule,
+    AuthModule,],
   controllers: [AppController],
   providers: [AppService],
 })

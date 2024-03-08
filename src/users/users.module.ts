@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { User, UserSchema } from './user.schema';
-import { SkillsModule } from '../skills/skills.module'; // Assurez-vous que le chemin d'importation est correct
+import { SkillsModule } from '../skills/skills.module';
 
 @Module({
   imports: [
@@ -12,5 +12,6 @@ import { SkillsModule } from '../skills/skills.module'; // Assurez-vous que le c
   ],
   providers: [UsersService],
   controllers: [UsersController],
+  exports: [UsersService]
 })
 export class UsersModule {}

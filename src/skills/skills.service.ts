@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Skill, SkillDocument } from './skill.schema';
 import { CreateSkillDto, UpdateSkillDto } from './dto';
-import { skillSynonyms } from '../synonymous/synonymous'; // Assurez-vous que le chemin est correct
+import { skillSynonyms } from '../synonymous/synonymous';
 
 
 @Injectable()

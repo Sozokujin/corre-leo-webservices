@@ -12,5 +12,5 @@ export class CreateProjectDto {
   @IsArray()
   @ArrayUnique()
   @IsString({ each: true })
-  teamMembers: string[]; // IDs des membres de l'équipe
+  teamMembers: string[];
 }

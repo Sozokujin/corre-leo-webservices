@@ -11,5 +11,5 @@ export class UpdateProjectDto {
 
   @IsOptional()
   @IsArray()
-  teamMembers?: string[]; // IDs des membres de l'équipe à mettre à jour
+  teamMembers?: string[];
 }
