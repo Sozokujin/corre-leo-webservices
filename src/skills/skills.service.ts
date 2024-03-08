@@ -10,10 +10,16 @@ import { skillSynonyms } from '../synonymous/synonymous';
 export class SkillsService {
   constructor(@InjectModel(Skill.name) private skillModel: Model<SkillDocument>) {}
 
-  private normalizeSkill(skill: string): string {
-    console.log(skill);
-    const normalizedKey = skill.toLowerCase().replace(/\s+/g, '');
-    return skillSynonyms[normalizedKey] || skill;
+  private normalizeSkill(name: string): string {
+    let normalizeSkill = name.trim().toLowerCase();
+
+    Object.keys(skillSynonyms).forEach((standardName) => {
+      skillSynonyms[standardName].forEach((variant) => {
+        if (normalizeSkill === variant) normalizeSkill = standardName;
+      });
+    });
+
+    return normalizeSkill;
   }
   
   async create(createSkillDto: CreateSkillDto): Promise<Skill> {

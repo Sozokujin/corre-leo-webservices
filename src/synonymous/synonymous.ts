@@ -1,10 +1,8 @@
-export const skillSynonyms: { [key: string]: string } = {
-  vuejs: "Vue.js",
-  vue: "Vue.js",
-  angularjs: "Angular",
-  angular: "Angular",
-  typescript: "TypeScript",
-  ts: "TypeScript",
-  scrum: "Scrum",
-  JS: "Javascript"
+export const skillSynonyms: { [key: string]: Array<String> } = {
+  "javascript": ["js", "ecmascript", "es"],
+  "typescript": ["ts"],
+  "reactjs": ["react", "react.js"],
+  "angular": ["angularjs", "angular.js"],
+  "vuejs": ["vue", "vue.js"],
+  "nodejs": ["node", "node.js"],
 };
