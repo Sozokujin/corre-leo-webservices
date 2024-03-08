@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateProjectDto, UpdateProjectDto } from './dto'; // Assurez-vous d'importer ou de définir vos DTOs
+import { CreateProjectDto, UpdateProjectDto } from './dto';
 import { Project, ProjectDocument } from './project.schema';
 
 @Injectable()

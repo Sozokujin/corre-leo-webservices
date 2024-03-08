@@ -17,7 +17,6 @@ export class ProjectsController {
   }
 
   @Get()
-  @Roles('user', 'admin')
   findAll() {
     return this.projectsService.findAll();
   }
@@ -28,11 +27,15 @@ export class ProjectsController {
   }
 
   @Put(':id')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
   update(@Param('id') id: string, @Body() updateProjectDto: UpdateProjectDto) {
     return this.projectsService.update(id, updateProjectDto);
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
   remove(@Param('id') id: string) {
     return this.projectsService.delete(id);
   }
