@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsArray } from 'class-validator';
+import { IsNotEmpty, IsString, IsArray, ArrayUnique } from 'class-validator';
 
 export class CreateProjectDto {
   @IsNotEmpty()
@@ -10,5 +10,7 @@ export class CreateProjectDto {
   description: string;
 
   @IsArray()
+  @ArrayUnique()
+  @IsString({ each: true })
   teamMembers: string[]; // IDs des membres de l'équipe
 }

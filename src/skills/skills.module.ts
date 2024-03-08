@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { Skill, SkillSchema } from './skill.schema';
 import { SkillsService } from './skills.service';
 import { SkillsController } from './skills.controller';
-import { Skill, SkillSchema } from './skill.schema';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: Skill.name, schema: SkillSchema }])
-  ],
-  controllers: [SkillsController],
+  imports: [MongooseModule.forFeature([{ name: Skill.name, schema: SkillSchema }])],
   providers: [SkillsService],
-  exports: [SkillsService], // Exporter le SkillsService si d'autres modules doivent l'utiliser
+  controllers: [SkillsController],
+  exports: [SkillsService],
 })
 export class SkillsModule {}
