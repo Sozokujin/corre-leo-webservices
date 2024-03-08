@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { MongodbModule } from './mongodb/mongodb.module';
 import { UsersModule } from './users/users.module';
 import { ProjectsModule } from './projects/projects.module';
+import { SkillsModule } from './skills/skills.module';
 
 @Module({
   imports: [MongodbModule,
@@ -12,7 +13,8 @@ import { ProjectsModule } from './projects/projects.module';
       isGlobal: true,
     }),
     UsersModule,
-    ProjectsModule,],
+    ProjectsModule,
+    SkillsModule,],
   controllers: [AppController],
   providers: [AppService],
 })
